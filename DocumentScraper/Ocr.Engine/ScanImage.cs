@@ -11,7 +11,7 @@ namespace Ocr.Engine
         public override void Process(List<string> files)
         {
             //get files from previous step
-            List<string> str =NextStep.Files;
+            List<string> str =files;
 
             //perform scan action
 

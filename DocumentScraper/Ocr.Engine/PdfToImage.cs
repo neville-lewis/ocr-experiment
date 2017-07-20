@@ -16,16 +16,26 @@ namespace Ocr.Engine
         {
 
 
-            //Files = new List<string>();
+            Files = new List<string>();
 
-            //-Convert pdf file to images here
+            
+            int i = 0;
+            //-Convert each pdf file to images here
+            foreach (string pdffile in files)
+            {
 
-            //add converted files and path to list
-            Files.Add("Image file 1");
-            Files.Add("Image file 2");
+                //add multiple image files from one pdf to list
+
+                i++;
+                Files.Add(pdffile + i + " - Image file 1" );
+                
+                Files.Add(pdffile + i + " - Image file 2" );
+                CallNextStep();
+                Files.Clear();
+            }
 
 
-            CallNextStep();
+           
             //throw new NotImplementedException();
         }
     }
