@@ -1,0 +1,9 @@
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\bin\Debug\DocumentScraper.exe.config
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\bin\Debug\DocumentScraper.exe
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\bin\Debug\DocumentScraper.pdb
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.csprojResolveAssemblyReference.cache
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.Form1.resources
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.Properties.Resources.resources
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.csproj.GenerateResource.Cache
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.exe
+C:\Projects-Random\OCR\DocumentScraper\DocumentScraper\obj\Debug\DocumentScraper.pdb

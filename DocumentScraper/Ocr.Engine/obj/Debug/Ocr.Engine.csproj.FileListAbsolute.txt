@@ -1,0 +1,4 @@
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\Ocr.Engine.dll
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\Ocr.Engine.pdb
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\obj\Debug\Ocr.Engine.dll
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\obj\Debug\Ocr.Engine.pdb

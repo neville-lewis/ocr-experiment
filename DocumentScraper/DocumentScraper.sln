@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocr.Engine", "Ocr.Engine\Ocr.Engine.csproj", "{74716EDD-0753-4B03-885F-AA9EC411267B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{58FE0A72-8848-41C9-B15E-A76A2D498FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocr.Win", "UI\Ocr.Win\Ocr.Win.csproj", "{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74716EDD-0753-4B03-885F-AA9EC411267B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74716EDD-0753-4B03-885F-AA9EC411267B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74716EDD-0753-4B03-885F-AA9EC411267B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74716EDD-0753-4B03-885F-AA9EC411267B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52DD81F1-7BC9-4E06-8A24-89E12F21F1B3} = {58FE0A72-8848-41C9-B15E-A76A2D498FF2}
+	EndGlobalSection
+EndGlobal

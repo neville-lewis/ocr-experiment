@@ -1,0 +1,11 @@
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Win.exe.config
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Win.exe
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Win.pdb
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.csprojResolveAssemblyReference.cache
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.main_frm.resources
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.Properties.Resources.resources
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.csproj.GenerateResource.Cache
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.exe
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.pdb
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Engine.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Engine.pdb
