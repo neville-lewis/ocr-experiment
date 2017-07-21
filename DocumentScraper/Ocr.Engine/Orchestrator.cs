@@ -8,16 +8,28 @@ namespace Ocr.Engine
 {
     public class Orchestrator
     {
-        public static void Run(List<string> files)
+        /// <summary>
+        /// Scans pdf files for preconfigured search words
+        /// </summary>
+        /// <param name="files">Provide a list of pdf files to scan</param>
+        public static List<FlaggedFilesDto> Run(List<string> files)
         {
-            StepChain start = new PdfToImage();
-            StepChain scanImage = new ScanImage(new Asprise());
+            //select an OCR provider
+            IOcr ocr = new Tess();
 
-            start.SetNextStep(scanImage);
+            //setting up the chain of events
+            StepChain pdfConversion = new PdfToImage();
+            StepChain scanImage = new ScanImageForKeyWords(ocr);
+            StepChain deleteImages = new CleanupPdfImageFiles();
 
-            start.Process(files);
+            pdfConversion.SetNextStep(scanImage);
+            scanImage.SetNextStep(deleteImages);
+            
+            pdfConversion.Process(files);
 
-            List<FlaggedFilesDto> flaggedFiles = scanImage.FlaggedFiles;
+            ocr.Cleanup();
+
+            return scanImage.FlaggedFiles;
         }
     }
 }

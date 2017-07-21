@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ocr.Engine
 {
-    public class Asprise : IOcr, IDisposable
+    public class Asprise : IOcr 
     {
         private AspriseOCR _ocr;
         public Asprise()
@@ -24,15 +24,10 @@ namespace Ocr.Engine
             return _ocr.Recognize(pathToImageFile, -1, -1, -1, -1, -1, AspriseOCR.RECOGNIZE_TYPE_ALL, AspriseOCR.OUTPUT_FORMAT_PLAINTEXT); ;
         }
 
-        public void Dispose()
-        {
-            _ocr.StopEngine();
-        }
-
-
+  
         public void Cleanup()
         {
-            Dispose();
+            _ocr.StopEngine();
         }
     }
 }

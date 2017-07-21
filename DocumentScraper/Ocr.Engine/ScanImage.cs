@@ -8,7 +8,7 @@ using asprise_ocr_api;
 
 namespace Ocr.Engine
 {
-    public class ScanImage : StepChain
+    public class ScanImageForKeyWords : StepChain
     {
 
         private List<string> _scanWords ;
@@ -16,34 +16,54 @@ namespace Ocr.Engine
         
         private IOcr _ocr;
 
+       
 
-
-        public ScanImage(IOcr ocr)
+        public ScanImageForKeyWords(IOcr ocr)
         {
             _scanWords = new List<string>();
+
+            //get these from config
             _scanWords.Add("MV-34");
             _scanWords.Add("Change of Address Affidavit");
             _scanWords.Add("Chang. of Addy");
+            _scanWords.Add("Address Affidavit");
+            _scanWords.Add("Affidavit");
 
-            _flaggedFiles= new List<FlaggedFilesDto>();
+            _flaggedFiles = new List<FlaggedFilesDto>();
             _ocr = ocr;
  
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="files"></param>
         public override void Process(List<string> files)
         {
+            int pageNum = 1;
 
-            //perform scan action for each file
+            //perform scan action for each image file extracted from the pdf
             foreach(string file in files)
             {
+                //When any of the predefined keywords found in the current image file.
                 if (searchKeyWord(file))
                 {
-                    _flaggedFiles.Add(new FlaggedFilesDto() { FilePath = file });
+                    var item = new FlaggedFilesDto() { FilePath = file.Split(new[] { "-_-" }, StringSplitOptions.None)[0], PageNum = pageNum };
+                    
+                    //only add if this has not been added before.
+                    if (!_flaggedFiles.Contains(item))
+                    {
+                        _flaggedFiles.Add(item);
+                    }
                 }
-                CallNextStep();
+                pageNum++;
             }
 
-            _ocr.Cleanup();
+            //delete the image files recieved in this step
+            Files = files;
+            CallNextStep();
+
+            //_ocr.Cleanup();
         }
 
 
@@ -54,7 +74,6 @@ namespace Ocr.Engine
             //run thru each of the keywords
             foreach (string scanWord in _scanWords)
             {
-                //dataExtracted = _ocr.Recognize(imageFile, -1, -1, -1, -1, -1, AspriseOCR.RECOGNIZE_TYPE_ALL, AspriseOCR.OUTPUT_FORMAT_PLAINTEXT);
                 if (dataExtracted.Contains(scanWord))
                 {
                     return true;

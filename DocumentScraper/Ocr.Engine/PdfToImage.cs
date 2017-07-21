@@ -27,15 +27,10 @@ namespace Ocr.Engine
             foreach (string pdffile in files)
             {
 
-                //add multiple image files from one pdf to list
-
-                //i++;
-                //Files.Add(pdffile + i + " - Image file 1" );
-
-                //Files.Add(pdffile + i + " - Image file 2" );
-
+                //getting a bunch of images per page of the pdf file in question
                 Files.AddRange(getImageFile(pdffile));
 
+                //scanning each of those files in the next step
                 CallNextStep();
                 Files.Clear();
             }
@@ -59,7 +54,7 @@ namespace Ocr.Engine
                 // Convert pdf to png in customized image size
                 //Image pageImage = pdfConverter.PageToImage(i, 500, 800);
 
-                imageFilePath = pdfFile + "img-" + i + ".png";
+                imageFilePath = pdfFile + "-_-img-" + i + ".png";
                 // Save converted image to png format
                 pageImage.Save(imageFilePath, ImageFormat.Png);
 

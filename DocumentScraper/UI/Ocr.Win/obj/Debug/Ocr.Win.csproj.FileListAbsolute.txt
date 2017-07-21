@@ -15,3 +15,9 @@ C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\asprise-ocr-dll-bund
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\asprise-ocr-dll-bundle-64.dll
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\asprise-ocr-api.pdb
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\asprise-ocr-api.xml
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x64\liblept172.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x64\libtesseract304.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x86\liblept172.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x86\libtesseract304.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Tesseract.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Tesseract.xml

@@ -37,12 +37,10 @@ namespace Ocr.Win
 
         private void btn_process_Click(object sender, EventArgs e)
         {
-            List<string> files = new List<string>(); //supply list of files - for this sample getting it from grid here. 
-            //files.Add("pdf file 1");
-            //files.Add("pdf file 2");
-
-            files.AddRange(openFile.FileNames);
-            Orchestrator.Run(files);
+            List<string> files = new List<string>(); 
+ 
+            files.AddRange(openFile.FileNames); //supply list of files - for this sample getting it from the open files dialog here. 
+            List<FlaggedFilesDto> flaggedFiles =  Orchestrator.Run(files);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Ocr.Engine
     public class FlaggedFilesDto
     {
         public string FilePath { get; set; }
+        public int PageNum { get; set; }
     }
 }

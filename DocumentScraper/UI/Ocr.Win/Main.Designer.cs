@@ -31,11 +31,12 @@
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.btn_QueFiles = new System.Windows.Forms.Button();
             this.fileDataGridView = new System.Windows.Forms.DataGridView();
-            this.FilePathName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keyWordFound = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_SearchWord = new System.Windows.Forms.Button();
             this.btn_process = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.FilePathName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyWordFound = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagNumToDisplay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.fileDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,25 +63,13 @@
             this.fileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.fileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FilePathName,
-            this.keyWordFound});
+            this.keyWordFound,
+            this.pagNumToDisplay});
             this.fileDataGridView.Location = new System.Drawing.Point(12, 246);
             this.fileDataGridView.Name = "fileDataGridView";
             this.fileDataGridView.ReadOnly = true;
-            this.fileDataGridView.Size = new System.Drawing.Size(494, 177);
+            this.fileDataGridView.Size = new System.Drawing.Size(621, 177);
             this.fileDataGridView.TabIndex = 1;
-            // 
-            // FilePathName
-            // 
-            this.FilePathName.HeaderText = "File Path";
-            this.FilePathName.Name = "FilePathName";
-            this.FilePathName.ReadOnly = true;
-            this.FilePathName.Width = 350;
-            // 
-            // keyWordFound
-            // 
-            this.keyWordFound.HeaderText = "Found";
-            this.keyWordFound.Name = "keyWordFound";
-            this.keyWordFound.ReadOnly = true;
             // 
             // btn_SearchWord
             // 
@@ -105,15 +94,34 @@
             // 
             this.listView1.Location = new System.Drawing.Point(12, 68);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(494, 101);
+            this.listView1.Size = new System.Drawing.Size(621, 101);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // FilePathName
+            // 
+            this.FilePathName.HeaderText = "File Path";
+            this.FilePathName.Name = "FilePathName";
+            this.FilePathName.ReadOnly = true;
+            this.FilePathName.Width = 350;
+            // 
+            // keyWordFound
+            // 
+            this.keyWordFound.HeaderText = "Found";
+            this.keyWordFound.Name = "keyWordFound";
+            this.keyWordFound.ReadOnly = true;
+            // 
+            // pagNumToDisplay
+            // 
+            this.pagNumToDisplay.HeaderText = "Page number";
+            this.pagNumToDisplay.Name = "pagNumToDisplay";
+            this.pagNumToDisplay.ReadOnly = true;
             // 
             // main_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 435);
+            this.ClientSize = new System.Drawing.Size(645, 456);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btn_process);
             this.Controls.Add(this.btn_SearchWord);
@@ -133,11 +141,12 @@
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button btn_QueFiles;
         private System.Windows.Forms.DataGridView fileDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilePathName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn keyWordFound;
         private System.Windows.Forms.Button btn_SearchWord;
         private System.Windows.Forms.Button btn_process;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FilePathName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn keyWordFound;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pagNumToDisplay;
     }
 }
 
