@@ -46,12 +46,10 @@ namespace Ocr.Engine
 
             int pageNum = 1;
 
-            FlaggedFileEventDataArgs fed2 = new FlaggedFileEventDataArgs();
-            fed2.Data = new FlaggedFilesDto() { FilePath = "some", PageNum = 5 };
-            base.OnKeyWordDetected(fed2);
 
             ProcessedFileEventDataArgs ped = new ProcessedFileEventDataArgs();
             ped.Data = new ProcessedFilesDto() { FilePath = pdfName };
+            ped.Status = "Processing...";
             base.OnFileProcessed(ped);
 
             //perform scan action for each image file extracted from the pdf
@@ -81,7 +79,7 @@ namespace Ocr.Engine
             //delete the image files recieved in this step
             Files = files;
             CallNextStep();
-
+            ped.Status = "Done.";
             base.OnFileProcessed(ped);
 
             //_ocr.Cleanup();
