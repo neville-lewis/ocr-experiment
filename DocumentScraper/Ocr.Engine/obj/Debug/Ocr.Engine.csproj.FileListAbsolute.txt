@@ -4,3 +4,8 @@ C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\obj\Debug\Ocr.Engine.dll
 C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\obj\Debug\Ocr.Engine.pdb
 C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\XsPDF.dll
 C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\obj\Debug\Ocr.Engine.csprojResolveAssemblyReference.cache
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\asprise-ocr-api.dll
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\asprise-ocr-dll-bundle-32.dll
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\asprise-ocr-dll-bundle-64.dll
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\asprise-ocr-api.pdb
+C:\Projects-Random\OCR\DocumentScraper\Ocr.Engine\bin\Debug\asprise-ocr-api.xml
