@@ -56,6 +56,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspriseOcr.cs" />
+    <Compile Include="IOcr.cs" />
     <Compile Include="StepChain.cs" />
     <Compile Include="Orchestrator.cs" />
     <Compile Include="PdfToImage.cs" />

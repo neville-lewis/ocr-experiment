@@ -11,7 +11,7 @@ namespace Ocr.Engine
         public static void Run(List<string> files)
         {
             StepChain start = new PdfToImage();
-            StepChain scanImage = new ScanImage();
+            StepChain scanImage = new ScanImage(new Asprise());
 
             start.SetNextStep(scanImage);
 
