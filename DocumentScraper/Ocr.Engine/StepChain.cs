@@ -8,15 +8,14 @@ namespace Ocr.Engine
 {
     public abstract class StepChain
     {
-        public List<string> Files;
+        protected List<string> Files;
 
-        public string FolderName;
+        protected string FolderName;
 
         protected StepChain NextStep;
         public void SetNextStep(StepChain step)
         {
             this.NextStep = step;
-            this.NextStep.Files = this.Files;
         }
 
         protected void CallNextStep()

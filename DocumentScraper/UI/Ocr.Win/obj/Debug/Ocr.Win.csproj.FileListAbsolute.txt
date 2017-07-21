@@ -9,3 +9,4 @@ C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.exe
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\obj\Debug\Ocr.Win.pdb
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Engine.dll
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Ocr.Engine.pdb
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\XsPDF.dll
