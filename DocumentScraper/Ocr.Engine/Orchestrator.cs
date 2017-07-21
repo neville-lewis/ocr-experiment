@@ -8,11 +8,15 @@ namespace Ocr.Engine
 {
     public class Orchestrator
     {
+
+
+        public event KeyWordDetectedEventHandler ValueFound;
+
         /// <summary>
         /// Scans pdf files for preconfigured search words
         /// </summary>
         /// <param name="files">Provide a list of pdf files to scan</param>
-        public static List<FlaggedFilesDto> Run(List<string> files)
+        public List<FlaggedFilesDto> Run(List<string> files)
         {
             //select an OCR provider
             IOcr ocr = new Tess();
@@ -22,14 +26,22 @@ namespace Ocr.Engine
             StepChain scanImage = new ScanImageForKeyWords(ocr);
             StepChain deleteImages = new CleanupPdfImageFiles();
 
+            
             pdfConversion.SetNextStep(scanImage);
             scanImage.SetNextStep(deleteImages);
-            
+
+            scanImage.KeyWordDetected += ScanImage_KeyWordDetected;  
+
             pdfConversion.Process(files);
 
             ocr.Cleanup();
 
             return scanImage.FlaggedFiles;
+        }
+
+        private void ScanImage_KeyWordDetected(EventDataArgs e)
+        {
+            ValueFound(e);
         }
     }
 }

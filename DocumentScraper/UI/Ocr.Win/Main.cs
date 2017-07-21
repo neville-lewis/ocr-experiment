@@ -37,10 +37,22 @@ namespace Ocr.Win
 
         private void btn_process_Click(object sender, EventArgs e)
         {
-            List<string> files = new List<string>(); 
- 
+            List<string> files = new List<string>();
+            Orchestrator orch = new Orchestrator();
+            orch.ValueFound += Orch_ValueFound;
+
             files.AddRange(openFile.FileNames); //supply list of files - for this sample getting it from the open files dialog here. 
-            List<FlaggedFilesDto> flaggedFiles =  Orchestrator.Run(files);
+            List<FlaggedFilesDto> flaggedFiles = orch.Run(files);
+
+
+            
+
+
+        }
+
+        private void Orch_ValueFound(EventDataArgs e)
+        {
+            
         }
     }
 }

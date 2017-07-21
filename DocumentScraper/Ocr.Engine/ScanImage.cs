@@ -8,15 +8,15 @@ using asprise_ocr_api;
 
 namespace Ocr.Engine
 {
+    
     public class ScanImageForKeyWords : StepChain
     {
 
         private List<string> _scanWords ;
-
-        
         private IOcr _ocr;
 
        
+            
 
         public ScanImageForKeyWords(IOcr ocr)
         {
@@ -40,10 +40,18 @@ namespace Ocr.Engine
         /// <param name="files"></param>
         public override void Process(List<string> files)
         {
+
+            
+
+
             int pageNum = 1;
+            EventDataArgs e = new EventDataArgs();
+            e.Data = new FlaggedFilesDto() { FilePath = "file path here", PageNum = 3 };
+
+            base.OnKeyWordDetected(e);
 
             //perform scan action for each image file extracted from the pdf
-            foreach(string file in files)
+            foreach (string file in files)
             {
                 //When any of the predefined keywords found in the current image file.
                 if (searchKeyWord(file))
@@ -54,6 +62,10 @@ namespace Ocr.Engine
                     if (!_flaggedFiles.Contains(item))
                     {
                         _flaggedFiles.Add(item);
+
+                        //raising an event chain to be caught in UI
+                        e.Data = item;
+                        base.OnKeyWordDetected(e);
                     }
                 }
                 pageNum++;
