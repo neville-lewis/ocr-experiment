@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ocr.Engine
 {
-    public delegate void KeyWordDetectedEventHandler(EventDataArgs e);
+    public delegate void FlaggedFileProcessedEventHandler(FlaggedFileEventDataArgs e);
+    public delegate void FileProcessedEventHandler(ProcessedFileEventDataArgs e);
+    
     public abstract class StepChain
     {
         protected List<string> Files;
@@ -19,7 +21,9 @@ namespace Ocr.Engine
         public List<FlaggedFilesDto> FlaggedFiles { get; private set; }
 
 
-        public event KeyWordDetectedEventHandler KeyWordDetected;
+        public event FlaggedFileProcessedEventHandler KeyWordDetected;
+
+        public event FileProcessedEventHandler FileProcessed;
 
         public void SetNextStep(StepChain step)
         {
@@ -34,9 +38,14 @@ namespace Ocr.Engine
             }
         }
 
-        protected virtual void OnKeyWordDetected(EventDataArgs e)
+        protected virtual void OnKeyWordDetected(FlaggedFileEventDataArgs e)
         {
             KeyWordDetected(e);
+        }
+
+        protected virtual void OnFileProcessed(ProcessedFileEventDataArgs e)
+        {
+            FileProcessed(e);
         }
 
         public abstract void Process(List<string> files);

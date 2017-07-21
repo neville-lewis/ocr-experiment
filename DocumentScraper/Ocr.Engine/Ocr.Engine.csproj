@@ -63,7 +63,7 @@
     <Compile Include="AspriseOcr.cs" />
     <Compile Include="CleanupPdfImageFiles.cs" />
     <Compile Include="EventData.cs" />
-    <Compile Include="FlaggedFilesDto.cs" />
+    <Compile Include="DtoFiles.cs" />
     <Compile Include="IOcr.cs" />
     <Compile Include="StepChain.cs" />
     <Compile Include="Orchestrator.cs" />

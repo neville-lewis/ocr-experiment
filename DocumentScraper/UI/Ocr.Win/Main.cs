@@ -40,6 +40,7 @@ namespace Ocr.Win
             List<string> files = new List<string>();
             Orchestrator orch = new Orchestrator();
             orch.ValueFound += Orch_ValueFound;
+            orch.FileProcessed += Orch_FileProcessed;
 
             files.AddRange(openFile.FileNames); //supply list of files - for this sample getting it from the open files dialog here. 
             List<FlaggedFilesDto> flaggedFiles = orch.Run(files);
@@ -50,9 +51,14 @@ namespace Ocr.Win
 
         }
 
-        private void Orch_ValueFound(EventDataArgs e)
+        private void Orch_FileProcessed(ProcessedFileEventDataArgs e)
         {
-            
+        //
+        }
+
+        private void Orch_ValueFound(FlaggedFileEventDataArgs e)
+        {
+            //show the row in the grid
         }
     }
 }

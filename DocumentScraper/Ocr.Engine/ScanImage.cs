@@ -41,32 +41,39 @@ namespace Ocr.Engine
         public override void Process(List<string> files)
         {
 
-            
-
+            //get the pdf name of the image files in question
+            string pdfName = files[0].Split(new[] { "-_-" }, StringSplitOptions.None)[0];
 
             int pageNum = 1;
-            EventDataArgs e = new EventDataArgs();
-            e.Data = new FlaggedFilesDto() { FilePath = "file path here", PageNum = 3 };
 
-            base.OnKeyWordDetected(e);
+            FlaggedFileEventDataArgs fed2 = new FlaggedFileEventDataArgs();
+            fed2.Data = new FlaggedFilesDto() { FilePath = "some", PageNum = 5 };
+            base.OnKeyWordDetected(fed2);
+
+            ProcessedFileEventDataArgs ped = new ProcessedFileEventDataArgs();
+            ped.Data = new ProcessedFilesDto() { FilePath = pdfName };
+            base.OnFileProcessed(ped);
 
             //perform scan action for each image file extracted from the pdf
             foreach (string file in files)
             {
+                
                 //When any of the predefined keywords found in the current image file.
                 if (searchKeyWord(file))
                 {
-                    var item = new FlaggedFilesDto() { FilePath = file.Split(new[] { "-_-" }, StringSplitOptions.None)[0], PageNum = pageNum };
-                    
+                    var item = new FlaggedFilesDto() { FilePath = pdfName, PageNum = pageNum };
                     //only add if this has not been added before.
                     if (!_flaggedFiles.Contains(item))
                     {
                         _flaggedFiles.Add(item);
 
                         //raising an event chain to be caught in UI
-                        e.Data = item;
-                        base.OnKeyWordDetected(e);
+                        FlaggedFileEventDataArgs fed = new FlaggedFileEventDataArgs();
+                        fed.Data = item;
+
+                        base.OnKeyWordDetected(fed);
                     }
+                    break;
                 }
                 pageNum++;
             }
@@ -74,6 +81,8 @@ namespace Ocr.Engine
             //delete the image files recieved in this step
             Files = files;
             CallNextStep();
+
+            base.OnFileProcessed(ped);
 
             //_ocr.Cleanup();
         }

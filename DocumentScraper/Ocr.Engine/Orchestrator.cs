@@ -10,8 +10,8 @@ namespace Ocr.Engine
     {
 
 
-        public event KeyWordDetectedEventHandler ValueFound;
-
+        public event FlaggedFileProcessedEventHandler ValueFound;
+        public event FileProcessedEventHandler FileProcessed; 
         /// <summary>
         /// Scans pdf files for preconfigured search words
         /// </summary>
@@ -30,7 +30,8 @@ namespace Ocr.Engine
             pdfConversion.SetNextStep(scanImage);
             scanImage.SetNextStep(deleteImages);
 
-            scanImage.KeyWordDetected += ScanImage_KeyWordDetected;  
+            scanImage.KeyWordDetected += ScanImage_KeyWordDetected;
+            scanImage.FileProcessed += ScanImage_FileProcessed;
 
             pdfConversion.Process(files);
 
@@ -39,7 +40,12 @@ namespace Ocr.Engine
             return scanImage.FlaggedFiles;
         }
 
-        private void ScanImage_KeyWordDetected(EventDataArgs e)
+        private void ScanImage_FileProcessed(ProcessedFileEventDataArgs e)
+        {
+            FileProcessed(e);
+        }
+
+        private void ScanImage_KeyWordDetected(FlaggedFileEventDataArgs e)
         {
             ValueFound(e);
         }

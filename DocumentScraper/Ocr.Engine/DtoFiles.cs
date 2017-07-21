@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ocr.Engine
 {
-    public class FlaggedFilesDto
+
+    public class ProcessedFilesDto
     {
         public string FilePath { get; set; }
+       
+    }
+
+
+    public class FlaggedFilesDto : ProcessedFilesDto
+    {
         public int PageNum { get; set; }
     }
 }
