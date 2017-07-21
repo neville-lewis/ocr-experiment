@@ -29,5 +29,10 @@ namespace Ocr.Engine
             _ocr.StopEngine();
         }
 
+
+        public void Cleanup()
+        {
+            Dispose();
+        }
     }
 }

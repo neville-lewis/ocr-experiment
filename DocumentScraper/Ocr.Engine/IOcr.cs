@@ -3,5 +3,7 @@
     public interface IOcr
     {
         string GetTextFromImage(string path);
+
+        void Cleanup();
     }
 }

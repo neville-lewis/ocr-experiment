@@ -12,9 +12,11 @@ namespace Ocr.Engine
     {
 
         private List<string> _scanWords ;
-        //private AspriseOCR _ocr;
 
+        
         private IOcr _ocr;
+
+
 
         public ScanImage(IOcr ocr)
         {
@@ -23,10 +25,9 @@ namespace Ocr.Engine
             _scanWords.Add("Change of Address Affidavit");
             _scanWords.Add("Chang. of Addy");
 
+            _flaggedFiles= new List<FlaggedFilesDto>();
             _ocr = ocr;
-            //AspriseOCR.SetUp();
-            //_ocr = new AspriseOCR();
-            //_ocr.StartEngine("eng", AspriseOCR.SPEED_FASTEST);
+ 
         }
 
         public override void Process(List<string> files)
@@ -35,11 +36,14 @@ namespace Ocr.Engine
             //perform scan action for each file
             foreach(string file in files)
             {
-                searchKeyWord(file);
+                if (searchKeyWord(file))
+                {
+                    _flaggedFiles.Add(new FlaggedFilesDto() { FilePath = file });
+                }
                 CallNextStep();
             }
 
-            //_ocr.StopEngine();
+            _ocr.Cleanup();
         }
 
 

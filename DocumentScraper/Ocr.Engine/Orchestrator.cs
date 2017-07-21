@@ -17,6 +17,7 @@ namespace Ocr.Engine
 
             start.Process(files);
 
+            List<FlaggedFilesDto> flaggedFiles = scanImage.FlaggedFiles;
         }
     }
 }

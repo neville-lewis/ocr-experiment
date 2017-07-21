@@ -13,6 +13,9 @@ namespace Ocr.Engine
         protected string FolderName;
 
         protected StepChain NextStep;
+
+        protected List<FlaggedFilesDto> _flaggedFiles;
+        public List<FlaggedFilesDto> FlaggedFiles { get; private set; }
         public void SetNextStep(StepChain step)
         {
             this.NextStep = step;
