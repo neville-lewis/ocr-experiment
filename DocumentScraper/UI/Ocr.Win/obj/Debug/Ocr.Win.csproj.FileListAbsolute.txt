@@ -21,3 +21,5 @@ C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x86\liblept172.dll
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\x86\libtesseract304.dll
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Tesseract.dll
 C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\Tesseract.xml
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\log4net.dll
+C:\Projects-Random\OCR\DocumentScraper\UI\Ocr.Win\bin\Debug\log4net.xml

@@ -49,7 +49,7 @@ namespace Ocr.Engine
 
             ProcessedFileEventDataArgs ped = new ProcessedFileEventDataArgs();
             ped.Data = new ProcessedFilesDto() { FilePath = pdfName };
-            ped.Status = "Processing...";
+            ped.Status = "Begin processing file: ";
             base.OnFileProcessed(ped);
 
             //perform scan action for each image file extracted from the pdf
@@ -79,7 +79,7 @@ namespace Ocr.Engine
             //delete the image files recieved in this step
             Files = files;
             CallNextStep();
-            ped.Status = "Done.";
+            ped.Status = "File processing done for:";
             base.OnFileProcessed(ped);
 
             //_ocr.Cleanup();

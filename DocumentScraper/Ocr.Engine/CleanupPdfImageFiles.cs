@@ -6,10 +6,11 @@ namespace Ocr.Engine
 {
     public class CleanupPdfImageFiles : StepChain
     {
+        private IOcr _ocr;
 
-        public CleanupPdfImageFiles()
+        public CleanupPdfImageFiles(IOcr ocr)
         {
-
+            _ocr = ocr;
         }
 
         /// <summary>
@@ -18,6 +19,7 @@ namespace Ocr.Engine
         /// <param name="files"></param>
         public override void Process(List<string> files)
         {
+            _ocr.Cleanup();
             //delete extracted image files here
             foreach (string f in files)
             {

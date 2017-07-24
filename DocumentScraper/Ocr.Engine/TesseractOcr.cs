@@ -15,12 +15,7 @@ namespace Ocr.Engine
 
         public Tess()
         {
-
-
             _tessEngine = new TesseractEngine(@"C:\Tools\tesseract-ocr-dotnet-master\tesseract-ocr-dotnet-master\tessdata", "eng", EngineMode.TesseractAndCube);
-            //_tessEngine = new TesseractEngine(@"C:\Tools\tessdata-master\tessdata-master", "eng", EngineMode.Default);
-
- 
         }
 
         public string GetTextFromImage(string path)
@@ -31,6 +26,7 @@ namespace Ocr.Engine
             var page = _tessEngine.Process(image, PageSegMode.SingleBlock);
 
             var textData = page.GetText();
+            image.Dispose();
             page.Dispose();
             return textData;
         }

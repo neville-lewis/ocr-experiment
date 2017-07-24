@@ -9,9 +9,18 @@ namespace Ocr.Engine
     public class Orchestrator
     {
 
-
+        //Orchestrator Events 
         public event FlaggedFileProcessedEventHandler ValueFound;
-        public event FileProcessedEventHandler FileProcessed; 
+        public event FileProcessedEventHandler FileProcessed;
+
+        public ILogger _log;
+
+
+        public Orchestrator()
+        {
+            _log = new Log4NetImplementation();
+        }
+
         /// <summary>
         /// Scans pdf files for preconfigured search words
         /// </summary>
@@ -21,10 +30,11 @@ namespace Ocr.Engine
             //select an OCR provider
             IOcr ocr = new Tess();
 
+            _log.Message("Starting up at: " + DateTime.Now.ToString());
             //setting up the chain of events
             StepChain pdfConversion = new PdfToImage();
             StepChain scanImage = new ScanImageForKeyWords(ocr);
-            StepChain deleteImages = new CleanupPdfImageFiles();
+            StepChain deleteImages = new CleanupPdfImageFiles(ocr);
 
             
             pdfConversion.SetNextStep(scanImage);
@@ -42,12 +52,16 @@ namespace Ocr.Engine
 
         private void ScanImage_FileProcessed(ProcessedFileEventDataArgs e)
         {
+            _log.Message(e.Status + ": " +e.Data.FilePath+ " at "+ DateTime.Now.ToString());
             FileProcessed(e);
         }
 
         private void ScanImage_KeyWordDetected(FlaggedFileEventDataArgs e)
         {
+            _log.Message("Flagged File: " + e.Data.FilePath + " on Page: " + e.Data.PageNum);
             ValueFound(e);
         }
     }
 }
+
+

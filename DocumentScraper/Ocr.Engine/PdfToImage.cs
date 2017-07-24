@@ -61,6 +61,7 @@ namespace Ocr.Engine
                 imageFiles.Add(imageFilePath);
             }
 
+            pdfConverter.Dispose();
             return imageFiles;
         }
     }
